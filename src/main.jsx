@@ -6,5 +6,9 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
+<<<<<<< HEAD
   </StrictMode>
+=======
+  </StrictMode>,
+>>>>>>> ef573ef (inicialización del proyecto)
 )
