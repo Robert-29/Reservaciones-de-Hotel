@@ -5,7 +5,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-<<<<<<< HEAD
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
@@ -19,9 +18,6 @@ export default {
         bold: 700,
       },
     },
-=======
-    extend: {},
->>>>>>> ef573ef (inicialización del proyecto)
   },
   plugins: [],
 }
