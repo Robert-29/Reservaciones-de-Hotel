@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
+import Servicios from "../components/Servicios";
 import Habitaciones from "../components/Habitaciones";
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
           </span>
         </div>
       </div>
+      <Servicios />
       <Habitaciones />
     </div>
   );
