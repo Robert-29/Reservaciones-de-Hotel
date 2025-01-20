@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import Servicios from "../components/Servicios";
 import Habitaciones from "../components/Habitaciones";
+import Ofertas from "../components/Ofertas";
 
 const Home = () => {
   const frases = [
@@ -40,6 +41,7 @@ const Home = () => {
       </div>
       <Servicios />
       <Habitaciones />
+      <Ofertas />
     </div>
   );
 };
