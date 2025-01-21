@@ -4,6 +4,7 @@ import Servicios from "../components/Servicios";
 import Habitaciones from "../components/Habitaciones";
 import Ofertas from "../components/Ofertas";
 import Galeria from "../components/Galeria";
+import Experiancias from "../components/Experiencias";
 
 const Home = () => {
   const frases = [
@@ -44,6 +45,7 @@ const Home = () => {
       <Habitaciones />
       <Ofertas />
       <Galeria />
+      <Experiancias />
     </div>
   );
 };
