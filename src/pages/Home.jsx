@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import Servicios from "../components/Servicios";
 import Habitaciones from "../components/Habitaciones";
 import Ofertas from "../components/Ofertas";
+import Galeria from "../components/Galeria";
 
 const Home = () => {
   const frases = [
@@ -42,6 +43,7 @@ const Home = () => {
       <Servicios />
       <Habitaciones />
       <Ofertas />
+      <Galeria />
     </div>
   );
 };
