@@ -5,7 +5,7 @@ const servicios = () => {
             <div className="w-full flex justify-center space-x-10 mt-10" >
                 <div data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
                      data-aos-delay="100" //retardo de 1 milisegundo
-                className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
+                    className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/src/assets/svg/wifi.svg" alt="wi-fi" />
                     </div>

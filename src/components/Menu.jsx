@@ -8,7 +8,7 @@ const Menu = () => {
         <ul className="flex space-x-10 font-inter text-sm tracking-wider">
           <li><a href="/">INICIO</a></li>
           <li><a href="/mashabitaciones">HABITACIONES</a></li>
-          <li><a href="#">SERVICIOS</a></li>
+          <li><a href="/actividades">ACTIVIDADES</a></li>
           <li><a href="#">INICIAR SESIÓN</a></li>
         </ul>
       </nav>
