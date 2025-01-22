@@ -30,7 +30,7 @@ const Home = () => {
   }, [frases.length]);
 
   return (
-    <div className="relative">
+    <div className="">
       <Menu />
       <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('/img/fondo-hotel.avif')` }}>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>

@@ -6,8 +6,8 @@ const Menu = () => {
           <h1 className="text-2xl font-cormorant tracking-wider ">CRYSTAL COVE</h1>
         </span>
         <ul className="flex space-x-10 font-inter text-sm tracking-wider">
-          <li><a href="#">INICIO</a></li>
-          <li><a href="#">HABITACIONES</a></li>
+          <li><a href="/">INICIO</a></li>
+          <li><a href="/mashabitaciones">HABITACIONES</a></li>
           <li><a href="#">SERVICIOS</a></li>
           <li><a href="#">INICIAR SESIÓN</a></li>
         </ul>
