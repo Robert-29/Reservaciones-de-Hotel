@@ -47,7 +47,7 @@ const Habitaciones = () => {
               </div>
             </div>
           </div>
-          <button className="text-3xl font-cormorant text-gray-800 mt-10 hover:border-b-gray-600 hover:border-b-2 cursor-pointer " >Ver más habitaciones →</button>
+          <a href="/mashabitaciones" className="text-3xl font-cormorant text-gray-800 mt-10 hover:border-b-gray-600 hover:border-b-2 cursor-pointer " >Ver más habitaciones →</a>
         </div>
       </div>
     );

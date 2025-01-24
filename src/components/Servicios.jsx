@@ -14,7 +14,7 @@ const servicios = () => {
                 </div>
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
-                    data-aos-delay="200" //retardo de 2 milisegundos
+                    data-aos-delay="150" //retardo de 2 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/src/assets/svg/tasa.svg" alt="" />
@@ -24,7 +24,7 @@ const servicios = () => {
                 </div>
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
-                    data-aos-delay="300" //retardo de 3 milisegundos
+                    data-aos-delay="200" //retardo de 3 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/src/assets/svg/mancuerna.svg" alt="" />
@@ -34,7 +34,7 @@ const servicios = () => {
                 </div>
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
-                    data-aos-delay="400" //retardo de 4 milisegundos
+                    data-aos-delay="250" //retardo de 4 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/src/assets/svg/cubiertos.svg" alt="" />
