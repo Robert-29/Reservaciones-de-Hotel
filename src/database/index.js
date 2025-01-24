@@ -18,22 +18,22 @@ app.get('/habitaciones', async (req, res) => {
 
 
 app.post("/nuevahabitacion", async (req, res) => {
-    const { numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
+    const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
 
-    if (!numero_habitacion || !estado || !precio || !descripcion || !numero_camas || !capacidad_personas) {
+    if ( !nombre || !numero_habitacion || !estado || !precio || !descripcion || !numero_camas || !capacidad_personas) {
         return res.status(400).json({ error: "Todos los campos son requeridos " });
     }
 
     try {
-        const [result] = await pool.query("INSERT INTO habitaciones (numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas) VALUES (?, ?, ?, ?, ?, ?)", [
-            numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas
+        const [result] = await pool.query("INSERT INTO habitaciones (nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas) VALUES (?, ?, ?, ?, ?, ?, ?)", [
+            nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas
         ]);
         
         if (result.affectedRows === 0) {
             return res.status(404).json({ error: "Habitación no creada" });
         }
         
-        res.status(201).json({numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas});
+        res.status(201).json({nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas});
     } catch (err) {
         console.error("Error al insertar la habitación:", err);
         res.status(500).send("Error al insertar la habitación");
