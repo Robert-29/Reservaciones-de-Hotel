@@ -71,7 +71,6 @@ const Actividades = () => {
                 <p className="font-inter text-gray-600 px-10 text-md" >Explora una amplia variedad de delicias culinarias en nuestro buffet internacional, preparado por chefs expertos.</p>
               </div>
             </div>
-
         </div>
       </div>
       <Derechos/>

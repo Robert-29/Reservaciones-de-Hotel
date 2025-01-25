@@ -5,7 +5,7 @@ const Habitaciones = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/habitaciones") // Ruta de tu backend
+    fetch("http://localhost:3000/habitaciones")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener las habitaciones");
@@ -26,6 +26,12 @@ const Habitaciones = () => {
         );
       });
   }, []);
+
+  const handleSeleccionarHabitacion = (habitacion) => {
+    return habitacion;
+  };
+
+  
 
   return (
     <div className="pt-20 px-8">
@@ -56,11 +62,8 @@ const Habitaciones = () => {
                 <span className="text-2xl font-inter font-light text-gray-800">
                   ${habitacion.precio}/noche
                 </span>
-                <a
-                  href="#"
-                  className="text-teal-500 font-semibold text-xl hover:underline"
-                >
-                  Ver Detalles →
+                <a href="#" className="text-teal-500 font-semibold text-xl hover:underline">
+                <button onClick={() => {handleSeleccionarHabitacion(habitacion.id)}} className="focus:outline-none">Ver Detalles</button>
                 </a>
               </div>
             </div>

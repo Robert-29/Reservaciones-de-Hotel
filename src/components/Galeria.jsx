@@ -49,7 +49,7 @@ const Galeria = () => {
           <SwiperSlide>
             <img
               src="/public/img/lobby.avif"
-              alt="Slide 1"
+              alt="Slide 4"
               className="w-full h-full object-cover"
               loading="lazy"
             />
