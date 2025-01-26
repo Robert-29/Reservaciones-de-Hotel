@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Habitaciones = () => {
   const [datos, setDatos] = useState([]); // Almacena los datos de las habitaciones
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     fetch("http://localhost:3000/habitaciones")
       .then((response) => {
@@ -25,13 +25,12 @@ const Habitaciones = () => {
           "Hubo un error al obtener las habitaciones. Por favor, intenta de nuevo más tarde."
         );
       });
-  }, []);
+  }, []);  
 
-  const handleSeleccionarHabitacion = (habitacion) => {
-    return habitacion;
+  const handleSeleccionarHabitacion = (id) => {
+    console.log(id);
+    alert(`Habitación seleccionada: ${id}`);
   };
-
-  
 
   return (
     <div className="pt-20 px-8">
@@ -62,9 +61,10 @@ const Habitaciones = () => {
                 <span className="text-2xl font-inter font-light text-gray-800">
                   ${habitacion.precio}/noche
                 </span>
-                <a href="#" className="text-teal-500 font-semibold text-xl hover:underline">
-                <button onClick={() => {handleSeleccionarHabitacion(habitacion.id)}} className="focus:outline-none">Ver Detalles</button>
+                <a href="/reservar" className="text-teal-500 font-semibold text-xl hover:underline">
+                  <button onClick={() => {handleSeleccionarHabitacion(habitacion.id)}} className="focus:outline-none">Ver Detalles</button>
                 </a>
+                {habitacion.id}
               </div>
             </div>
           </div>

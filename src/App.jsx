@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home.jsx"
+import Home from "./pages/Home.jsx";
 import MasHabitaciones from './pages/MasHabitaciones.jsx';
 import Actividades from './pages/Actividades.jsx';
 import Reservar from './pages/Reservar.jsx';
 
 function App() {
   return (
-    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -15,7 +14,6 @@ function App() {
           <Route path="/reservar" element={<Reservar />} />
         </Routes>
       </BrowserRouter>
-    </>
   );
 }
 
