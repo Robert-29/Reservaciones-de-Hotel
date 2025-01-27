@@ -8,6 +8,27 @@ const Reservar = () => {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
 
+  //formatear la fecha de manera que sea mas legible
+  const formatDate = (date) => {
+    if (!date) return ''; // Si no hay fecha seleccionada, retorna un string vacío
+    return date.toLocaleDateString('es-ES', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+
+    // Función para calcular los días entre check-in y check-out
+    const calculateDays = (checkIn, checkOut) => {
+      if (!checkIn || !checkOut) return 0; // Si alguna de las fechas no está seleccionada, retorna 0
+      const timeDifference = checkOut.getTime() - checkIn.getTime(); // Diferencia en milisegundos
+      const days = timeDifference / (1000 * 3600 * 24); // Convertir milisegundos a días
+      return days;
+    };
+
+
   return (
     <>
     <Menu />
@@ -15,7 +36,7 @@ const Reservar = () => {
       <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >Suite Ejecutiva</h1>
       <span className="font-inter text-2xl text-gray-600 tracking-wider" >1,999/noche</span>
     </div>
-    <section className="flex px-20 space-x-10 mb-10" >
+    <section className="flex px-16 space-x-10 mb-10" >
       <div className="w-[45%] ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="col-span-1 md:col-span-2">
@@ -61,14 +82,21 @@ const Reservar = () => {
         </div>
       </div>
     </div>
+
     <div className="w-[55%] p-10 shadow-lg rounded-xl space-y-5 " >
       <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar Suite Ejecutiva </h2>
       <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center items-center' >
         <p className='font-inter text-xl ' >1,999/por noche</p>
+        <p>Check-in: {formatDate(checkIn)}</p>
+        <p>Check-out: {formatDate(checkOut)}</p>
+        <p>
+              <strong>Días de estancia: </strong>
+              {calculateDays(checkIn, checkOut)} días
+            </p>
       </div>
 
       {/* Calendario Check-in */}
-      <div className='flex space-x-5 w-full' >
+      <div className='flex space-x-3 w-full' >
         <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-[50%]">
           <h3 className="text-lg font-medium mb-4">Check-in</h3>
           <DayPicker

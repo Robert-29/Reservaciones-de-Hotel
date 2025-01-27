@@ -9,7 +9,15 @@
 /* Personalización de días seleccionados */
 .rd-day--selected {
     background-color: #3b82f6; /* Tailwind blue-500 */
-    color: white;
+    color: red;
+  }
+
+  .rdp-day--selected {
+    @apply bg-blue-500 text-white;
+  }
+  
+  .rdp-day--today {
+    @apply border-2 border-blue-500;
   }
   
   /* Hover para los días */
@@ -24,4 +32,9 @@
     font-weight: 600;
     color: #1f2937; /* Tailwind gray-800 */
   }
-  
+
+  /*Desabilitar fechas pasadas*/
+  .rdp-day--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
