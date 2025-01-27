@@ -1,4 +1,4 @@
-import Derechos from "../components/derechos";
+import Derechos from "../components/Derechos";
 import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
 

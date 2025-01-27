@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import Menu from '../components/Menu.jsx';
 import Derechos from '../components/Derechos.jsx';
+import {DayPicker} from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
 
 const Reservar = () => {
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
 
   return (
     <>
@@ -11,7 +16,7 @@ const Reservar = () => {
       <span className="font-inter text-2xl text-gray-600 tracking-wider" >1,999/noche</span>
     </div>
     <section className="flex px-20 space-x-10 mb-10" >
-      <div className="w-[50%] ">
+      <div className="w-[45%] ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="col-span-1 md:col-span-2">
           <img src="/public/img/habitacion1.avif"alt="Habitación principal" className="w-full rounded-xl shadow-lg"
@@ -56,7 +61,38 @@ const Reservar = () => {
         </div>
       </div>
     </div>
-    <div className="w-[50%] bg-red-600 " ></div>
+    <div className="w-[55%] p-10 shadow-lg rounded-xl space-y-5 " >
+      <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar Suite Ejecutiva </h2>
+      <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center items-center' >
+        <p className='font-inter text-xl ' >1,999/por noche</p>
+      </div>
+
+      {/* Calendario Check-in */}
+      <div className='flex space-x-5 w-full' >
+        <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-[50%]">
+          <h3 className="text-lg font-medium mb-4">Check-in</h3>
+          <DayPicker
+            mode="single"
+            selected={checkIn}
+            onSelect={setCheckIn}
+            disabled={checkOut ? { after: checkOut } : undefined}
+            className="text-gray-800"
+          />
+        </div>
+
+        {/* Calendario Check-out */}
+        <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-[50%] ">
+          <h3 className="text-lg font-medium mb-4">Check-out</h3>
+          <DayPicker
+            mode="single"
+            selected={checkOut}
+            onSelect={setCheckOut}
+            disabled={checkIn ? { before: checkIn } : undefined}
+            className="text-gray-800"
+          />
+        </div>
+      </div>
+    </div>   
     </section>
     <Derechos />
     </>
