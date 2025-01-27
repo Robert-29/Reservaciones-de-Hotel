@@ -7,6 +7,27 @@ import 'react-day-picker/dist/style.css';
 const Reservar = () => {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
+  const servicios = [
+    { id: 1, nombre: "Desayuno buffet", precio: 25 },
+    { id: 2, nombre: "Acceso al spa", precio: 45 },
+    { id: 3, nombre: "Servicio de transporte", precio: 35 },
+    { id: 4, nombre: "Estacionamiento", precio: 15 },
+  ];
+  const [seleccionados, setSeleccionados] = useState([]);
+
+  const manejarSeleccion = (id) => {
+    setSeleccionados((prevSeleccionados) =>
+      prevSeleccionados.includes(id)
+        ? prevSeleccionados.filter((item) => item !== id)
+        : [...prevSeleccionados, id]
+    );
+  };
+
+  const calcularTotal = () =>
+    seleccionados.reduce(
+      (total, id) => total + servicios.find((s) => s.id === id).precio,
+      0
+    );
 
   //formatear la fecha de manera que sea mas legible
   const formatDate = (date) => {
@@ -20,13 +41,13 @@ const Reservar = () => {
   };
 
 
-    // Función para calcular los días entre check-in y check-out
-    const calculateDays = (checkIn, checkOut) => {
-      if (!checkIn || !checkOut) return 0; // Si alguna de las fechas no está seleccionada, retorna 0
-      const timeDifference = checkOut.getTime() - checkIn.getTime(); // Diferencia en milisegundos
-      const days = timeDifference / (1000 * 3600 * 24); // Convertir milisegundos a días
-      return days;
-    };
+  // Función para calcular los días entre check-in y check-out
+  const calculateDays = (checkIn, checkOut) => {
+    if (!checkIn || !checkOut) return 0; // Si alguna de las fechas no está seleccionada, retorna 0
+    const timeDifference = checkOut.getTime() - checkIn.getTime(); // Diferencia en milisegundos
+    const days = timeDifference / (1000 * 3600 * 24); // Convertir milisegundos a días
+    return days;
+  };
 
 
   return (
@@ -34,7 +55,6 @@ const Reservar = () => {
     <Menu />
     <div className="px-20 pb-0 flex flex-col space-y-5 mt-32 mb-10 " >
       <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >Suite Ejecutiva</h1>
-      <span className="font-inter text-2xl text-gray-600 tracking-wider" >1,999/noche</span>
     </div>
     <section className="flex px-16 space-x-10 mb-10" >
       <div className="w-[45%] ">
@@ -86,13 +106,7 @@ const Reservar = () => {
     <div className="w-[55%] p-10 shadow-lg rounded-xl space-y-5 " >
       <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar Suite Ejecutiva </h2>
       <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center items-center' >
-        <p className='font-inter text-xl ' >1,999/por noche</p>
-        <p>Check-in: {formatDate(checkIn)}</p>
-        <p>Check-out: {formatDate(checkOut)}</p>
-        <p>
-              <strong>Días de estancia: </strong>
-              {calculateDays(checkIn, checkOut)} días
-            </p>
+        <span className='font-inter text-xl ' >1,999/por noche</span>
       </div>
 
       {/* Calendario Check-in */}
@@ -120,6 +134,46 @@ const Reservar = () => {
           />
         </div>
       </div>
+      <h3 className='font-inter font-semibold' >Servicios Adicionales</h3>
+      <div className='font-inter grid grid-cols-2' >
+      {servicios.map((servicio) => (
+          <label
+            key={servicio.id}
+            className="flex items-center space-x-2 cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              checked={seleccionados.includes(servicio.id)}
+              onChange={() => manejarSeleccion(servicio.id)}
+              className="w-5 h-5 accent-black "
+            />
+            <span className="text-gray-700">
+              {servicio.nombre} (${servicio.precio})
+            </span>
+          </label>
+        ))}
+      </div>
+      <div className="mt-4">
+        <p className="text-gray-800 font-medium">
+          Total Servicios: <span className="font-semibold">${calcularTotal()}</span>
+        </p>
+      </div>
+      <div className='flex flex-col justify-center space-y-2' >
+        <h3 className='font-inter font-semibold' >Información de Reservación</h3>
+        <p className='font-inter text-gray-600' >{formatDate(checkIn) == 0 ? "" : `Check-In: ${formatDate(checkIn)}`  } </p>
+        <p className='font-inter text-gray-600' >{formatDate(checkOut) == 0 ? "" : `Check-Out: ${formatDate(checkOut)}`  } </p>
+        <p className='font-inter text-gray-600' >{calculateDays(checkIn, checkOut) == 0 ? "" : `Noches reservadas: ${calculateDays(checkIn, checkOut)}`  } </p>
+        <p className='font-inter text-gray-600' >{seleccionados.length == 0 ? "" : `Servicios adicionales: ${seleccionados.length} ` } </p>
+        <p className='font-inter text-gray-600' >{formatDate(checkIn) == 0 & formatDate(checkOut) == 0 & seleccionados.length == 0 ? "Sin seleccionar Check-in, check-out y Servicios adicionales" : ""  } </p>
+      </div>
+    <div className='flex flex-col space-y-2' >
+      <h3 className='font-inter font-semibold' >Información de Contacto</h3>
+      <p> <strong>Nombre:</strong> Roberto Carlos Ramirez Hernandez </p>
+      <p> <strong>Email:</strong> robert292005@gmail.com</p>
+      <p> <strong>Teléfono:</strong> 55 4904 0246 </p>
+      <p></p>
+      <p></p>
+    </div>
     </div>   
     </section>
     <Derechos />
