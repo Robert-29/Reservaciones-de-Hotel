@@ -164,16 +164,22 @@ const Reservar = () => {
         <p className='font-inter text-gray-600' >{formatDate(checkOut) == 0 ? "" : `Check-Out: ${formatDate(checkOut)}`  } </p>
         <p className='font-inter text-gray-600' >{calculateDays(checkIn, checkOut) == 0 ? "" : `Noches reservadas: ${calculateDays(checkIn, checkOut)}`  } </p>
         <p className='font-inter text-gray-600' >{seleccionados.length == 0 ? "" : `Servicios adicionales: ${seleccionados.length} ` } </p>
-        <p className='font-inter text-gray-600' >{formatDate(checkIn) == 0 & formatDate(checkOut) == 0 & seleccionados.length == 0 ? "Sin seleccionar Check-in, check-out y Servicios adicionales" : ""  } </p>
+        <p className='font-inter text-gray-600' >{formatDate(checkIn) == 0 & formatDate(checkOut) == 0 && seleccionados.length == 0 ? "Sin seleccionar Check-in, check-out y Servicios adicionales" : ""  } </p>
+        <p className='font-inter font-semibold text-xl  text-center text-gray-900' >{formatDate(checkIn) == 0 && formatDate(checkOut) == 0 && seleccionados.length == 0 ? "" : `Coste Total: $${(calculateDays(checkIn, checkOut) * 1999) + calcularTotal()}` } </p>
       </div>
-    <div className='flex flex-col space-y-2' >
-      <h3 className='font-inter font-semibold' >Información de Contacto</h3>
-      <p> <strong>Nombre:</strong> Roberto Carlos Ramirez Hernandez </p>
-      <p> <strong>Email:</strong> robert292005@gmail.com</p>
-      <p> <strong>Teléfono:</strong> 55 4904 0246 </p>
-      <p></p>
-      <p></p>
-    </div>
+      <div className='flex flex-col space-y-2' >
+        <h3 className='font-inter font-semibold' >Información de Contacto</h3>
+        <p> <strong>Nombre:</strong> Roberto Carlos Ramirez Hernandez </p>
+        <p> <strong>Email:</strong> robert292005@gmail.com</p>
+        <p> <strong>Teléfono:</strong> 55 4904 0246 </p>
+        <p></p>
+        <p></p>
+      </div>
+      <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center ' >
+        <h3 className='font-inter font-semibold' >Política de Cancelación</h3>
+        <p className='font-inter text-sm text-gray-600 ' >Cancelación gratuita hasta 48 horas antes del check-in. Después de este período, se cobrará la primera noche.</p>
+      </div>
+      <button className='w-full bg-gray-900 text-white font-inter p-3 rounded-md' >Reservar Ahora</button>
     </div>   
     </section>
     <Derechos />
