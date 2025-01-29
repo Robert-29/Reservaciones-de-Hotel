@@ -1,10 +1,12 @@
 import Derechos from "../components/Derechos";
 import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const MasHabitaciones = () => {
   const [datos, setDatos] = useState([]); // Almacena los datos de las habitaciones
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3000/habitaciones")
@@ -29,6 +31,10 @@ const MasHabitaciones = () => {
       });
   }, []);
 
+  const handleSeleccionarHabitacion = (id) => {
+    navigate(`/reservar/${id}`);
+  };
+
     return (
     <section>
         <Menu />
@@ -52,7 +58,7 @@ const MasHabitaciones = () => {
           >
             <img
               className="w-full h-64 object-cover"
-              src={`/public/img/habitacion${habitacion.id}.avif`}
+              src={`/public/img/habitacion${index + 1}.avif`}
               alt={habitacion.nombre}
             />
             <div className="p-4">
@@ -66,12 +72,12 @@ const MasHabitaciones = () => {
                 <span className="text-2xl font-inter font-light text-gray-800">
                   ${habitacion.precio}/noche
                 </span>
-                <a
-                  href="#"
+                <button
+                  onClick={() => {handleSeleccionarHabitacion(habitacion.id)}}
                   className="text-teal-500 font-semibold text-xl hover:underline"
                 >
                   Ver Detalles →
-                </a>
+                </button>
               </div>
             </div>
           </div>

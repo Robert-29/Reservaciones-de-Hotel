@@ -17,7 +17,7 @@ const Habitaciones = () => {
       .then((data) => {
         // Filtrar las habitaciones para que solo se muestren las habitaciones A-1, B-1 y C-1
         const habitacionesFiltradas = data.filter((habitacion) =>
-          [1, 4, 7].includes(habitacion.id)
+          ["A-1", "B-1", "C-1"].includes(habitacion.numero_habitacion)
         );
         setDatos(habitacionesFiltradas);
       })
@@ -73,7 +73,7 @@ const Habitaciones = () => {
       </div>
 
       <div className="flex justify-center mt-10">
-        <a
+        <a href="/mashabitaciones"
           className="text-3xl font-cormorant text-gray-800 hover:border-b-gray-600 hover:border-b-2 cursor-pointer"
         >
           Ver más habitaciones →
