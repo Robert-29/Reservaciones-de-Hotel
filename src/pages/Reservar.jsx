@@ -7,6 +7,7 @@ import Derechos from '../components/Derechos.jsx';
 
 const Reservar = () => {
   const {id} = useParams();
+  const [datos, setDatos] = useState([])
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const [seleccionados, setSeleccionados] = useState([]);
@@ -18,7 +19,7 @@ const Reservar = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:3000/alumnos")
+    fetch(`http://localhost:3000/habitaciones/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
@@ -28,9 +29,9 @@ const Reservar = () => {
       .then((data) => setDatos(data))
       .catch((err) => {
         console.error(err);
-        setError("Hubo un error al obtener los datos");
+        console.log("Hubo un error al obtener los datos");
       });
-  }, []);
+  }, [id]);
 
   const manejarSeleccion = (id) => {
     setSeleccionados((prevSeleccionados) =>
@@ -66,13 +67,13 @@ const Reservar = () => {
     return days;
   };
 
+  console.log(datos)
 
   return (
     <>
     <Menu />
     <div className="px-20 pb-0 flex flex-col space-y-5 mt-32 mb-10 " >
-      <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >Suite Ejecutiva</h1>
-      <p>`estas reservando la habitación con id ${id}`</p>
+      <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >{datos.nombre}</h1>
     </div>
     <section className="flex px-16 space-x-10 mb-10" >
       <div className="w-[45%] ">
@@ -91,14 +92,14 @@ const Reservar = () => {
       </div>
       <div  className='flex flex-col space-y-5 mt-10'>
         <h3 className='font-cormorant font-light text-3xl text-gray-800' >Descripción</h3>
-        <p className='font-inter text-xl text-gray-600' >Espaciosa suite con vista a la ciudad, área de trabajo y todas las comodidades para el viajero de negocios. Incluye acceso al lounge ejecutivo.</p>
+        <p className='font-inter text-xl text-gray-600' >{datos.descripcion}</p>
         <article className='flex items-center space-x-2' >
           <img className='h-6' src="/src/assets/svg/users.svg" alt="user" />
-          <p className='text-xl font-inter text-gray-600' >4 Personas</p>
+          <p className='text-xl font-inter text-gray-600' >{datos.capacidad_personas} Personas</p>
         </article>
         <article className='flex items-center space-x-2' >
           <img className='h-6' src="/src/assets/svg/spa.svg" alt="user" />
-          <p className='text-xl font-inter text-gray-600' >2 Camas matrimoniales</p>
+          <p className='text-xl font-inter text-gray-600' >{datos.numero_camas} Camas matrimoniales</p>
         </article>
         <div className='grid grid-cols-2 gap-4' >
           <div className='space-x-5 bg-gray-50 rounded-xl flex items-center p-5' >
@@ -122,9 +123,9 @@ const Reservar = () => {
     </div>
 
     <div className="w-[55%] p-10 shadow-lg rounded-xl space-y-5 " >
-      <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar Suite Ejecutiva </h2>
+      <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar {datos.nombre} </h2>
       <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center items-center' >
-        <span className='font-inter text-xl ' >1,999/por noche</span>
+        <span className='font-inter text-xl ' >{datos.precio}/por noche</span>
       </div>
 
       {/* Calendario Check-in */}
