@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Habitaciones = () => {
   const [datos, setDatos] = useState([]); // Almacena los datos de las habitaciones
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   
   useEffect(() => {
     fetch("http://localhost:3000/habitaciones")
@@ -28,8 +30,7 @@ const Habitaciones = () => {
   }, []);  
 
   const handleSeleccionarHabitacion = (id) => {
-    console.log(id);
-    alert(`Habitación seleccionada: ${id}`);
+    navigate(`/reservar/${id}`);
   };
 
   return (
@@ -61,10 +62,9 @@ const Habitaciones = () => {
                 <span className="text-2xl font-inter font-light text-gray-800">
                   ${habitacion.precio}/noche
                 </span>
-                <a href="/reservar" className="text-teal-500 font-semibold text-xl hover:underline">
+                <a href="" className="text-teal-500 font-semibold text-xl hover:underline">
                   <button onClick={() => {handleSeleccionarHabitacion(habitacion.id)}} className="focus:outline-none">Ver Detalles</button>
                 </a>
-                {habitacion.id}
               </div>
             </div>
           </div>
@@ -73,7 +73,6 @@ const Habitaciones = () => {
 
       <div className="flex justify-center mt-10">
         <a
-          href="/mashabitaciones"
           className="text-3xl font-cormorant text-gray-800 hover:border-b-gray-600 hover:border-b-2 cursor-pointer"
         >
           Ver más habitaciones →

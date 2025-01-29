@@ -1,19 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {DayPicker} from 'react-day-picker';
+import { useParams } from 'react-router-dom';
+import 'react-day-picker/dist/style.css';
 import Menu from '../components/Menu.jsx';
 import Derechos from '../components/Derechos.jsx';
-import {DayPicker} from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
 
 const Reservar = () => {
+  const {id} = useParams();
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
+  const [seleccionados, setSeleccionados] = useState([]);
   const servicios = [
     { id: 1, nombre: "Desayuno buffet", precio: 25 },
     { id: 2, nombre: "Acceso al spa", precio: 45 },
     { id: 3, nombre: "Servicio de transporte", precio: 35 },
     { id: 4, nombre: "Estacionamiento", precio: 15 },
   ];
-  const [seleccionados, setSeleccionados] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/alumnos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los datos");
+        }
+        return response.json();
+      })
+      .then((data) => setDatos(data))
+      .catch((err) => {
+        console.error(err);
+        setError("Hubo un error al obtener los datos");
+      });
+  }, []);
 
   const manejarSeleccion = (id) => {
     setSeleccionados((prevSeleccionados) =>
@@ -55,6 +72,7 @@ const Reservar = () => {
     <Menu />
     <div className="px-20 pb-0 flex flex-col space-y-5 mt-32 mb-10 " >
       <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >Suite Ejecutiva</h1>
+      <p>`estas reservando la habitación con id ${id}`</p>
     </div>
     <section className="flex px-16 space-x-10 mb-10" >
       <div className="w-[45%] ">

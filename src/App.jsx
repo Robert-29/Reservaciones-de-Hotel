@@ -11,7 +11,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/mashabitaciones" element={<MasHabitaciones />} />
           <Route path="/actividades" element={<Actividades />} />
-          <Route path="/reservar" element={<Reservar />} />
+          <Route path="/reservar/:id" element={<Reservar />} />
         </Routes>
       </BrowserRouter>
   );

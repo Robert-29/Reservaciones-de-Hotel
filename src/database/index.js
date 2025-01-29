@@ -16,6 +16,20 @@ app.get('/habitaciones', async (req, res) => {
     }
 });
 
+app.get('/habitaciones/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Extraer el ID de los parámetros de la URL
+        const [habitaciones] = await pool.query("SELECT * FROM habitaciones WHERE id = ?", [id]); // Pasar el ID como parámetro
+        if (habitaciones.length === 0) {
+            return res.status(404).json({ message: "Habitación no encontrada" }); // Validar si no hay resultados
+        }
+        res.json(habitaciones[0]); // Retornar solo el primer resultado
+    } catch (err) {
+        console.error("Error al consultar la tabla `habitaciones`:", err);
+        res.status(500).json({ error: "Error al obtener los datos de la tabla `habitaciones`" });
+    }
+});
+
 
 app.post("/nuevahabitacion", async (req, res) => {
     const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
