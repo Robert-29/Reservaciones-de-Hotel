@@ -74,6 +74,8 @@ const Reservar = () => {
     <Menu />
     <div className="px-20 pb-0 flex flex-col space-y-5 mt-32 mb-10 " >
       <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >{datos.nombre}</h1>
+      <p>{datos.numero_habitacion}</p>
+      <p>{datos.estado}</p>
     </div>
     <section className="flex px-16 space-x-10 mb-10" >
       <div className="w-[45%] ">

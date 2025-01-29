@@ -17,7 +17,7 @@ const Habitaciones = () => {
       .then((data) => {
         // Filtrar las habitaciones para que solo se muestren las habitaciones A-1, B-1 y C-1
         const habitacionesFiltradas = data.filter((habitacion) =>
-          ["A-1", "B-1", "C-1"].includes(habitacion.numero_habitacion)
+          [1, 4, 7].includes(habitacion.id)
         );
         setDatos(habitacionesFiltradas);
       })
@@ -42,13 +42,14 @@ const Habitaciones = () => {
 
       <div className="flex flex-wrap justify-center gap-6">
         {datos.map((habitacion, index) => (
+          
           <div
             key={index}
             className="w-[28%] bg-white shadow-lg rounded-lg overflow-hidden hover:-translate-y-1 transform transition duration-500"
           >
             <img
               className="w-full h-64 object-cover"
-              src={`/public/img/habitacion${habitacion.id}.avif`} // Carga imagen local
+              src={`/public/img/habitacion${index + 1}.avif`} // Carga imagen local
               alt={habitacion.nombre}
             />
             <div className="p-4">
