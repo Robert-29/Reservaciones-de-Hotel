@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import {DayPicker} from 'react-day-picker';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import 'react-day-picker/dist/style.css';
 import Menu from '../components/Menu.jsx';
 import Derechos from '../components/Derechos.jsx';
 
 const Reservar = () => {
   const {id} = useParams();
+  const navigate = useNavigate()
   const [datos, setDatos] = useState([])
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
@@ -19,6 +20,7 @@ const Reservar = () => {
   ];
 
   useEffect(() => {
+    //extrae la habitacion mediante ID
     fetch(`http://localhost:3000/habitaciones/${id}`)
       .then((response) => {
         if (!response.ok) {
@@ -26,12 +28,25 @@ const Reservar = () => {
         }
         return response.json();
       })
-      .then((data) => setDatos(data))
-      .catch((err) => {
-        console.error(err);
-        console.log("Hubo un error al obtener los datos");
-      });
-  }, [id]);
+      .then((data) => {
+        if (data.estado === "reservada") {
+          // Si la habitación está ocupada, buscar la siguiente disponible en la siguiente ruta
+          fetch(`http://localhost:3000/habitaciones/disponible/${data.tipo_habitacion}`)
+          .then((res) => res.json())
+          .then((disponible) => {
+              if (disponible.siguienteId) {
+                  navigate(`/reservar/${disponible.siguienteId}`);
+              } else {
+                  alert("No hay habitaciones disponibles de este tipo.");
+              }
+          })
+          .catch((err) => console.error("Error al buscar habitación disponible", err));
+        } else {
+          setDatos(data);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, [id, navigate]);
 
   const manejarSeleccion = (id) => {
     setSeleccionados((prevSeleccionados) =>
@@ -66,8 +81,6 @@ const Reservar = () => {
     const days = timeDifference / (1000 * 3600 * 24); // Convertir milisegundos a días
     return days;
   };
-
-  console.log(datos)
 
   return (
     <>

@@ -30,6 +30,30 @@ app.get('/habitaciones/:id', async (req, res) => {
     }
 });
 
+app.get("/habitaciones/disponible/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const query = `
+            SELECT id 
+            FROM habitaciones 
+            WHERE estado = 'disponible' 
+            ORDER BY id ASC 
+            LIMIT 1;
+        `;
+
+        const [results] = await pool.query(query, [id]);
+        
+        if (results.length > 0) {
+            res.json({ siguienteId: results[0].id });
+        } else {
+            res.status(404).json({ mensaje: "No hay habitaciones disponibles de este tipo" });
+        }
+    } catch (err) {
+        console.error("Error al consultar habitaciones disponibles:", err);
+        res.status(500).json({ error: "Error en la consulta" });
+    }
+});
+
 
 app.post("/nuevahabitacion", async (req, res) => {
     const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
