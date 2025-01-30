@@ -31,7 +31,7 @@ const Reservar = () => {
       .then((data) => {
         if (data.estado === "reservada") {
           // Si la habitación está ocupada, buscar la siguiente disponible en la siguiente ruta
-          fetch(`http://localhost:3000/habitaciones/disponible/${data.tipo_habitacion}`)
+          fetch(`http://localhost:3000/habitaciones/disponible/${id}`)
           .then((res) => res.json())
           .then((disponible) => {
               if (disponible.siguienteId) {

@@ -33,16 +33,25 @@ app.get('/habitaciones/:id', async (req, res) => {
 app.get("/habitaciones/disponible/:id", async (req, res) => {
     try {
         const { id } = req.params;
+        
+        // Obtener el tipo de la habitación con ese id
+        const [habitacion] = await pool.query("SELECT tipo_habitacion FROM habitaciones WHERE id = ?", [id]);
+        
+        if (habitacion.length === 0) {
+            return res.status(404).json({ mensaje: "Habitación no encontrada" });
+        }
+
+        // Buscar la siguiente habitación disponible del mismo tipo
         const query = `
             SELECT id 
             FROM habitaciones 
-            WHERE estado = 'disponible' 
+            WHERE tipo_habitacion = ? AND estado = 'disponible' 
             ORDER BY id ASC 
             LIMIT 1;
         `;
-
-        const [results] = await pool.query(query, [id]);
         
+        const [results] = await pool.query(query, [habitacion[0].tipo_habitacion]);
+
         if (results.length > 0) {
             res.json({ siguienteId: results[0].id });
         } else {
