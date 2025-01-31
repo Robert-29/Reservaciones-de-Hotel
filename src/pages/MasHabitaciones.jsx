@@ -1,4 +1,4 @@
-import Derechos from "../components/Derechos";
+import Derechos from "../components/derechos.jsx";
 import Menu from "../components/Menu";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';

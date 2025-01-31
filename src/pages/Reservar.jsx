@@ -3,7 +3,7 @@ import {DayPicker} from 'react-day-picker';
 import { useNavigate, useParams } from 'react-router-dom';
 import 'react-day-picker/dist/style.css';
 import Menu from '../components/Menu.jsx';
-import Derechos from '../components/Derechos.jsx';
+import Derechos from '../components/derechos.jsx';
 
 const Reservar = () => {
   const {id} = useParams();
@@ -18,6 +18,7 @@ const Reservar = () => {
     { id: 3, nombre: "Servicio de transporte", precio: 35 },
     { id: 4, nombre: "Estacionamiento", precio: 15 },
   ];
+
 
   useEffect(() => {
     //extrae la habitacion mediante ID
@@ -35,7 +36,7 @@ const Reservar = () => {
           .then((res) => res.json())
           .then((disponible) => {
               if (disponible.siguienteId) {
-                  navigate(`/reservar/${disponible.siguienteId}`);
+                navigate(`/reservar/${disponible.siguienteId}`);
               } else {
                   alert("No hay habitaciones disponibles de este tipo.");
               }
@@ -47,6 +48,10 @@ const Reservar = () => {
       })
       .catch((err) => console.error(err));
   }, [id, navigate]);
+
+  const reservacionRealizada = (id) => {
+    navigate(`misreservaciones/${id}`);
+  }
 
   const manejarSeleccion = (id) => {
     setSeleccionados((prevSeleccionados) =>
@@ -213,7 +218,7 @@ const Reservar = () => {
         <h3 className='font-inter font-semibold' >Política de Cancelación</h3>
         <p className='font-inter text-sm text-gray-600 ' >Cancelación gratuita hasta 48 horas antes del check-in. Después de este período, se cobrará la primera noche.</p>
       </div>
-      <button className='w-full bg-gray-900 text-white font-inter p-3 rounded-md' >Reservar Ahora</button>
+      <button className='w-full bg-gray-900 text-white font-inter p-3 rounded-md' onClick={reservacionRealizada(datos.id)}  >Reservar Ahora</button>
     </div>   
     </section>
     <Derechos />

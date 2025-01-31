@@ -63,6 +63,17 @@ app.get("/habitaciones/disponible/:id", async (req, res) => {
     }
 });
 
+//-----------------reservaciones------------------
+
+app.get('/reservaciones', async (req, res) => {
+    try {
+        const [reservaciones] = await pool.query("SELECT * FROM reservaciones"); 
+        res.json(reservaciones); 
+    } catch (err) {
+        console.error("Error al consultar la tabla `habitaciones`:", err);
+        res.status(500).json({ error: "Error al obtener los datos de la tabla `habitaciones`" });
+    }
+});
 
 app.post("/nuevahabitacion", async (req, res) => {
     const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;

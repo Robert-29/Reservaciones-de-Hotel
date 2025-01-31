@@ -9,6 +9,7 @@ const Menu = () => {
           <li className="hover:border-b-2 border-black " ><a href="/">INICIO</a></li>
           <li className="hover:border-b-2 border-black " ><a href="/mashabitaciones">HABITACIONES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="/actividades">ACTIVIDADES</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="/misreservaciones">MIS RESERVACIONES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="#">INICIAR SESIÓN</a></li>
         </ul>
       </nav>
