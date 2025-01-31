@@ -75,6 +75,47 @@ app.get('/reservaciones', async (req, res) => {
     }
 });
 
+app.get('/reservaciones/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Extraer el ID de los parámetros de la URL
+        const [reservaciones] = await pool.query("SELECT * FROM reservaciones WHERE id = ?", [id]); // Pasar el ID como parámetro
+        if (reservaciones.length === 0) {
+            return res.status(404).json({ message: "Reservación no encontrada" }); // Validar si no hay resultados
+        }
+        res.json(reservaciones[0]); // Retornar solo el primer resultado
+    } catch (err) {
+        console.error("Error al consultar la tabla `reservaciones`:", err);
+        res.status(500).json({ error: "Error al obtener los datos de la tabla `reservaciones`" });
+    }
+});
+
+//------------------usuarios----------------------
+
+app.get('/usuarios', async (req, res) => {
+    try {
+        const [usuarios] = await pool.query("SELECT * FROM usuarios"); 
+        res.json(usuarios); 
+    } catch (err) {
+        console.error("Error al consultar la tabla `usuarios`:", err);
+        res.status(500).json({ error: "Error al obtener los datos de la tabla `usuarios`" });
+    }
+});
+
+app.get('/usuarios/:id', async (req, res) => {
+    try {
+        const { id } = req.params; // Extraer el ID de los parámetros de la URL
+        const [usuarios] = await pool.query("SELECT * FROM usuarios WHERE id = ?", [id]); // Pasar el ID como parámetro
+        if (usuarios.length === 0) {
+            return res.status(404).json({ message: "Usuario no encontrada" }); // Validar si no hay resultados
+        }
+        res.json(usuarios[0]); // Retornar solo el primer resultado
+    } catch (err) {
+        console.error("Error al consultar la tabla `usuarios`:", err);
+        res.status(500).json({ error: "Error al obtener los datos de la tabla `usuarios`" });
+    }
+});
+
+
 app.post("/nuevahabitacion", async (req, res) => {
     const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
 
