@@ -49,10 +49,6 @@ const Reservar = () => {
       .catch((err) => console.error(err));
   }, [id, navigate]);
 
-  const reservacionRealizada = (id) => {
-    navigate(`misreservaciones/${id}`);
-  }
-
   const manejarSeleccion = (id) => {
     setSeleccionados((prevSeleccionados) =>
       prevSeleccionados.includes(id)
@@ -218,7 +214,7 @@ const Reservar = () => {
         <h3 className='font-inter font-semibold' >Política de Cancelación</h3>
         <p className='font-inter text-sm text-gray-600 ' >Cancelación gratuita hasta 48 horas antes del check-in. Después de este período, se cobrará la primera noche.</p>
       </div>
-      <button className='w-full bg-gray-900 text-white font-inter p-3 rounded-md' onClick={reservacionRealizada(datos.id)}  >Reservar Ahora</button>
+      <button className='w-full bg-gray-900 text-white font-inter p-3 rounded-md'>Reservar Ahora</button>
     </div>   
     </section>
     <Derechos />
