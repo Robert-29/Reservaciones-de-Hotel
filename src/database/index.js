@@ -115,6 +115,30 @@ app.get('/usuarios/:id', async (req, res) => {
     }
 });
 
+// Ruta para crear un nuevo usuario
+app.post("/register", async (req, res) => {
+    const { nombre, email, contrasena, rol } = req.body;
+
+    if (!nombre || !email || !contrasena || !rol) {
+        return res.status(400).json({ error: "Los campos son requeridos " });
+    }
+
+    try {
+        const [result] = await pool.query("INSERT INTO usuarios (nombre, email, contrasena, rol) VALUES (?, ?, ?, ?)", [
+            nombre, email, contrasena, rol
+        ]);
+        
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "Alumno no encontrado" });
+        }
+        
+        res.status(201).send("Usuario creado correctamente");
+    } catch (err) {
+        console.error("Error al insertar el usuario:", err);
+        res.status(500).send("Error al insertar el usuario ", err);
+    }
+});
+
 
 app.post("/nuevahabitacion", async (req, res) => {
     const { nombre, numero_habitacion, estado, precio, descripcion, numero_camas, capacidad_personas} = req.body;
