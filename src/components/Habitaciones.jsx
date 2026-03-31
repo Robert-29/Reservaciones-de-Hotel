@@ -5,7 +5,7 @@ const Habitaciones = () => {
   const [datos, setDatos] = useState([]); // Almacena los datos de las habitaciones
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     fetch("http://localhost:3000/habitaciones")
       .then((response) => {
@@ -27,7 +27,7 @@ const Habitaciones = () => {
           "Hubo un error al obtener las habitaciones. Por favor, intenta de nuevo más tarde."
         );
       });
-  }, []);  
+  }, []);
 
   const handleSeleccionarHabitacion = (id) => {
     navigate(`/reservar/${id}`);
@@ -42,7 +42,7 @@ const Habitaciones = () => {
 
       <div className="flex flex-wrap justify-center gap-6">
         {datos.map((habitacion, index) => (
-          
+
           <div
             key={index}
             className="w-[28%] bg-white shadow-lg rounded-lg overflow-hidden hover:-translate-y-1 transform transition duration-500"
@@ -64,7 +64,7 @@ const Habitaciones = () => {
                   ${habitacion.precio}/noche
                 </span>
                 <a href="" className="text-teal-500 font-semibold text-xl hover:underline">
-                  <button onClick={() => {handleSeleccionarHabitacion(habitacion.id)}} className="focus:outline-none">Ver Detalles</button>
+                  <button onClick={() => { handleSeleccionarHabitacion(habitacion.id) }} className="focus:outline-none">Ver Detalles</button>
                 </a>
               </div>
             </div>
