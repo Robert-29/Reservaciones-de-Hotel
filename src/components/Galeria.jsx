@@ -12,19 +12,19 @@ const Galeria = () => {
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0} // Espacio entre slides
-          slidesPerView={1} // Cantidad de slides visibles
+          slidesPerView={1} // Cantidad de imagenes visibles
           loop={true}
-          autoplay={{ delay: 8000, disableOnInteraction: true }} // Autoplay cada 8 segundos
+          autoplay={{ delay: 5000, disableOnInteraction: true }} // Autoplay cada 8 segundos
           navigation={{ // Botones de navegación
-            nextEl: ".custom-next",// Clase personalizada para el botón siguiente
             prevEl: ".custom-prev",// Clase personalizada para el botón anterior
+            nextEl: ".custom-next",// Clase personalizada para el botón siguiente
           }}
           pagination={{ clickable: true }} // Índice clickable
           className="h-full"
         >
           <SwiperSlide>
             <img
-              src="/public/img/fondo-hotel.avif"
+              src="/img/fondo-hotel.avif"
               alt="Slide 1"
               className="w-full h-full object-cover"
               loading="lazy" // Carga diferida

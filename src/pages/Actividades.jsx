@@ -11,7 +11,7 @@ const Actividades = () => {
         </h1>
         <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center justify-center gap-6">
           <div className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/public/img/actividad1.avif" alt="Suite Ejecutiva" />
+            <img className="w-[45%] object-cover" src="/img/actividad1.avif" alt="Suite Ejecutiva" />
             <div className="p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
@@ -24,7 +24,7 @@ const Actividades = () => {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/public/img/actividad2.avif" alt="Suite Ejecutiva" />
+            <img className="w-[45%] object-cover" src="/img/actividad2.avif" alt="Suite Ejecutiva" />
             <div className="p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
@@ -36,7 +36,7 @@ const Actividades = () => {
             </div>
           </div>
           <div data-aos="fade-up" data-aos-delay="100" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/public/img/actividad3.avif" alt="Suite Ejecutiva" />
+            <img className="w-[45%] object-cover" src="/img/actividad3.avif" alt="Suite Ejecutiva" />
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
@@ -48,7 +48,7 @@ const Actividades = () => {
             </div>
           </div>
           <div data-aos="fade-up" data-aos-delay="300" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/public/img/actividad4.avif" alt="Suite Ejecutiva" />
+            <img className="w-[45%] object-cover" src="/img/actividad4.avif" alt="Suite Ejecutiva" />
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
@@ -60,7 +60,7 @@ const Actividades = () => {
             </div>
           </div>
           <div data-aos="fade-up" data-aos-delay="300" className="w-[90%]  flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/public/img/actividad6.jpeg" alt="Suite Ejecutiva" />
+            <img className="w-[45%] object-cover" src="/img/actividad6.jpeg" alt="Suite Ejecutiva" />
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >

@@ -58,7 +58,7 @@ const MasHabitaciones = () => {
           >
             <img
               className="w-full h-64 object-cover"
-              src={`/public/img/habitacion${index + 1}.avif`}
+              src={`/img/habitacion${index + 1}.avif`}
               alt={habitacion.nombre}
             />
             <div className="p-4">
