@@ -49,7 +49,7 @@ const Habitaciones = () => {
           >
             <img
               className="w-full h-64 object-cover"
-              src={`/public/img/habitacion${index + 1}.avif`} // Carga imagen local
+              src={`/img/habitacion${index + 1}.avif`} // Carga imagen local
               alt={habitacion.nombre}
             />
             <div className="p-4">
