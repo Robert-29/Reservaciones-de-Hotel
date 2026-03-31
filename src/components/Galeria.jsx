@@ -32,7 +32,7 @@ const Galeria = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/img/habitacion1.avif"
+              src="/img/habitacion1.avif"
               alt="Slide 2"
               className="w-full h-full object-cover"
               loading="lazy"
@@ -40,7 +40,7 @@ const Galeria = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/img/habitacion2.avif"
+              src="/img/habitacion2.avif"
               alt="Slide 3"
               className="w-full h-full object-cover"
               loading="lazy"
@@ -48,7 +48,7 @@ const Galeria = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/img/lobby.avif"
+              src="/img/lobby.avif"
               alt="Slide 4"
               className="w-full h-full object-cover"
               loading="lazy"

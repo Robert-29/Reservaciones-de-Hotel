@@ -188,17 +188,18 @@ const Reservar = () => {
         <div className="w-[45%] ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-1 md:col-span-2">
-              <img src="/public/img/habitacion1.avif" alt="Habitación principal" className="w-full rounded-xl shadow-lg"
+              <img src="/img/habitacion1.avif" alt="Habitación principal" className="w-full rounded-xl shadow-lg"
               />
             </div>
 
             <div className="flex gap-4">
-              <img src="/public/img/habitacion2.avif" alt="Habitación 1" className="rounded-xl shadow-lg"
+              <img src="/img/habitacion2.avif" alt="Habitación 1" className="rounded-xl shadow-lg"
               />
-              <img src="/public/img/habitacion3.avif" alt="Habitación 2" className="rounded-xl shadow-lg"
+              <img src="/img/habitacion3.avif" alt="Habitación 2" className="rounded-xl shadow-lg"
               />
             </div>
           </div>
+
           <div className='flex flex-col space-y-5 mt-10'>
             <h3 className='font-cormorant font-light text-3xl text-gray-800' >Descripción</h3>
             <p className='font-inter text-xl text-gray-600' >{datos.descripcion}</p>
