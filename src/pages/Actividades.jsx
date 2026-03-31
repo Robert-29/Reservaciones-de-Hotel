@@ -15,7 +15,7 @@ const Actividades = () => {
             <div className="p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
-                  <img className="h-8" src="/src/assets/svg/luna.svg" alt="" />
+                  <img className="h-8" src="/svg/luna.svg" alt="" />
                 </article>
                 <h3 className="font-cormorant text-2xl tracking-wider " >Cenas Privadas a la Luz de la Luna</h3>
               </div>
@@ -28,7 +28,7 @@ const Actividades = () => {
             <div className="p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
-                  <img className="h-8" src="/src/assets/svg/acuatico.svg" alt="" />
+                  <img className="h-8" src="/svg/acuatico.svg" alt="" />
                 </article>
                 <h3 className="font-cormorant text-2xl tracking-wider " >Buseo</h3>
               </div>
@@ -40,7 +40,7 @@ const Actividades = () => {
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
-                  <img className="h-8" src="/src/assets/svg/mancuerna.svg" alt="" />
+                  <img className="h-8" src="/svg/mancuerna.svg" alt="" />
                 </article>
                 <h3 className="font-cormorant text-2xl tracking-wider " >Gimnasio</h3>
               </div>
@@ -52,7 +52,7 @@ const Actividades = () => {
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
-                  <img className="h-8" src="/src/assets/svg/spa.svg" alt="" />
+                  <img className="h-8" src="/svg/spa.svg" alt="" />
                 </article>
                 <h3 className="font-cormorant text-2xl tracking-wider " >Spa y Bienestar</h3>
               </div>
@@ -64,7 +64,7 @@ const Actividades = () => {
             <div className="p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
-                  <img className="h-8" src="/src/assets/svg/cubiertos.svg" alt="" />
+                  <img className="h-8" src="/svg/cubiertos.svg" alt="" />
                 </article>
                 <h3 className="font-cormorant text-2xl tracking-wider " >Buffet</h3>
               </div>

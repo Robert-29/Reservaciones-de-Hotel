@@ -8,7 +8,7 @@ const Ofertas = () => {
                     data-aos-delay="100" //retardo de 1 milisegundo
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/brillos.svg" alt="" />
+                        <img src="/svg/brillos.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Escapada Romántica</h3>
                     <p className="font-inter text-gray-600 text-center" >Incluye cena a la luz de las velas, botella de champagne y decoración especial</p>
@@ -19,7 +19,7 @@ const Ofertas = () => {
                     data-aos-delay="200" //retardo de 2 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/users.svg" alt="" />
+                        <img src="/svg/users.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Paquete Familiar</h3>
                     <p className="font-inter text-gray-600 text-center" >Habitación conectada para niños, actividades recreativas y desayuno incluido</p>
@@ -30,7 +30,7 @@ const Ofertas = () => {
                     data-aos-delay="300" //retardo de 3 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/calendario.svg" alt="" />
+                        <img src="/svg/calendario.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Estancia Prolongada</h3>
                     <p className="font-inter text-gray-600 text-center" >Descuentos especiales para reservas de 5 noches o más</p>

@@ -58,10 +58,10 @@ const Galeria = () => {
 
         {/* Botones personalizados */}
         <button className=" custom-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-50">
-          <img src="/src/assets/svg/left.svg" alt="Flecha izquierda" className="w-10 h-10" />
+          <img src="/svg/left.svg" alt="Flecha izquierda" className="w-10 h-10" />
         </button>
         <button className="custom-next absolute right-4 top-1/2 transform -translate-y-1/2 z-50">
-          <img src="/src/assets/svg/right.svg" alt="Flecha derecha" className="w-10 h-10" />
+          <img src="/svg/right.svg" alt="Flecha derecha" className="w-10 h-10" />
         </button>
 
         {/* Estilos personalizados */}

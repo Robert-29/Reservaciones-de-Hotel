@@ -204,28 +204,28 @@ const Reservar = () => {
             <h3 className='font-cormorant font-light text-3xl text-gray-800' >Descripción</h3>
             <p className='font-inter text-xl text-gray-600' >{datos.descripcion}</p>
             <article className='flex items-center space-x-2' >
-              <img className='h-6' src="/src/assets/svg/users.svg" alt="user" />
+              <img className='h-6' src="/svg/users.svg" alt="user" />
               <p className='text-xl font-inter text-gray-600' >{datos.capacidad_personas} Personas</p>
             </article>
             <article className='flex items-center space-x-2' >
-              <img className='h-6' src="/src/assets/svg/spa.svg" alt="user" />
+              <img className='h-6' src="/svg/spa.svg" alt="user" />
               <p className='text-xl font-inter text-gray-600' >{datos.numero_camas} Camas matrimoniales</p>
             </article>
             <div className='grid grid-cols-2 gap-4' >
               <div className='space-x-5 bg-gray-50 rounded-xl flex items-center p-5' >
-                <img src="/src/assets/svg/wifi.svg" alt="" />
+                <img src="/svg/wifi.svg" alt="" />
                 <p>Wi-Fi de alta velocidad</p>
               </div>
               <div className='space-x-5 bg-gray-50 rounded-xl flex items-center p-5' >
-                <img src="/src/assets/svg/tasa.svg" alt="" />
+                <img src="/svg/tasa.svg" alt="" />
                 <p>Cafetera premium</p>
               </div>
               <div className='space-x-5 bg-gray-50 rounded-xl flex items-center p-5' >
-                <img src="/src/assets/svg/bañera.svg" alt="" />
+                <img src="/svg/bañera.svg" alt="" />
                 <p>Baño de lujo</p>
               </div>
               <div className='space-x-5 bg-gray-50 rounded-xl flex items-center p-5' >
-                <img src="/src/assets/svg/TV.svg" alt="" />
+                <img src="/svg/TV.svg" alt="" />
                 <p>Smart TV 55 P. </p>
               </div>
             </div>

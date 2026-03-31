@@ -7,7 +7,7 @@ const servicios = () => {
                      data-aos-delay="100" //retardo de 1 milisegundo
                     className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/wifi.svg" alt="wi-fi" />
+                        <img src="/svg/wifi.svg" alt="wi-fi" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Wi-Fi Gratuito</h3>
                     <p className="font-inter text-gray-600 text-center" >Conexión de alta velocidad en todas las áreas</p>
@@ -17,7 +17,7 @@ const servicios = () => {
                     data-aos-delay="150" //retardo de 2 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/tasa.svg" alt="" />
+                        <img src="/svg/tasa.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Desayuno Gourmet</h3>
                     <p className="font-inter text-gray-600 text-center" >Buffet internacional todas las mañanas</p>
@@ -27,7 +27,7 @@ const servicios = () => {
                     data-aos-delay="200" //retardo de 3 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/mancuerna.svg" alt="" />
+                        <img src="/svg/mancuerna.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Gimnasio</h3>
                     <p className="font-inter text-gray-600 text-center" >Equipamiento moderno disponible 24/7</p>
@@ -37,7 +37,7 @@ const servicios = () => {
                     data-aos-delay="250" //retardo de 4 milisegundos
                 className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
                     <div className="bg-gray-50 rounded-full p-4" >
-                        <img src="/src/assets/svg/cubiertos.svg" alt="" />
+                        <img src="/svg/cubiertos.svg" alt="" />
                     </div>
                     <h3 className="font-cormorant font-light tracking-wider text-xl text-gray-800" >Restaurante</h3>
                     <p className="font-inter text-gray-600 text-center" >Cocina internacional de primer nivel</p>
