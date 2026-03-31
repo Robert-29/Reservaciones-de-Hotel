@@ -1,0 +1,23 @@
+Estructura de la tabla reservaciones:
+
+Field                          Type                      Null       Key        Default         Extra
+----------------------------------------------------------------------------------------------------
+id                             int                       NO         PRI        NULL            auto_increment
+usuario_id                     int                       NO         MUL        NULL            
+habitacion_id                  int                       NO         MUL        NULL            
+check_in                       date                      NO         MUL        NULL            
+check_out                      date                      NO                    NULL            
+noches                         int                       NO                    NULL            
+nombre_huesped                 varchar(255)              NO                    NULL            
+email_huesped                  varchar(255)              NO                    NULL            
+telefono_huesped               varchar(20)               YES                   NULL            
+numero_huespedes               int                       NO                    1               
+servicios_adicionales          json                      YES                   NULL            
+precio_habitacion              decimal(10,2)             NO                    NULL            
+precio_servicios               decimal(10,2)             YES                   0.00            
+precio_total                   decimal(10,2)             NO                    NULL            
+estado                         varchar(50)               YES        MUL        confirmada      
+fecha_creacion                 timestamp                 YES                   CURRENT_TIMESTAMP DEFAULT_GENERATED
+fecha_actualizacion            timestamp                 YES                   CURRENT_TIMESTAMP DEFAULT_GENERATED on update CURRENT_TIMESTAMP
+
+Total de reservaciones: 0

@@ -1,4 +1,23 @@
+import { useState, useEffect } from "react";
+import { obtenerUsuario, cerrarSesion as cerrarSesionAuth } from "../utils/auth";
+import { useNavigate } from "react-router-dom";
+
 const Menu = () => {
+  const [usuario, setUsuario] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Verificar si hay usuario autenticado al cargar el componente
+    const usuarioActual = obtenerUsuario();
+    setUsuario(usuarioActual);
+  }, []);
+
+  const cerrarSesion = () => {
+    cerrarSesionAuth();
+    setUsuario(null);
+    navigate("/");
+  };
+
   return (
     <header className="fixed top-0 left-0 h-20 w-full pt-4 pb-4 flex items-center justify-center bg-white/95 shadow-sm  z-50">
       <nav className="w-[90%] flex  justify-between">
@@ -10,7 +29,19 @@ const Menu = () => {
           <li className="hover:border-b-2 border-black " ><a href="/mashabitaciones">HABITACIONES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="/actividades">ACTIVIDADES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="/misreservaciones">MIS RESERVACIONES</a></li>
-          <li className="hover:border-b-2 border-black " ><a href="/iniciarsesion">INICIAR SESIÓN</a></li>
+          {usuario ? (
+            <li className="flex items-center space-x-4">
+              <span className="text-gray-700">Hola, <span className="font-semibold">{usuario.nombre}</span></span>
+              <button
+                onClick={cerrarSesion}
+                className="bg-gray-900 text-white px-4 py-1 rounded-md hover:bg-gray-700 transition"
+              >
+                Cerrar Sesión
+              </button>
+            </li>
+          ) : (
+            <li className="hover:border-b-2 border-black " ><a href="/iniciarsesion">INICIAR SESIÓN</a></li>
+          )}
         </ul>
       </nav>
     </header>
