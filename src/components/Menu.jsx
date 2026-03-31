@@ -25,10 +25,10 @@ const Menu = () => {
           <h1 className="text-2xl font-cormorant tracking-wider ">CRYSTAL COVE</h1>
         </span>
         <ul className="flex space-x-10 font-inter text-sm tracking-wider items-center">
-          <li className="hover:border-b-2 border-black " ><a href="/">INICIO</a></li>
-          <li className="hover:border-b-2 border-black " ><a href="/mashabitaciones">HABITACIONES</a></li>
-          <li className="hover:border-b-2 border-black " ><a href="/actividades">ACTIVIDADES</a></li>
-          <li className="hover:border-b-2 border-black " ><a href="/misreservaciones">MIS RESERVACIONES</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="./">INICIO</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="./mashabitaciones">HABITACIONESsssssss</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="./actividades">ACTIVIDADES</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="./misreservaciones">MIS RESERVACIONES</a></li>
           {usuario ? (
             <li className="flex items-center space-x-4">
               <span className="text-gray-700">Hola, <span className="font-semibold">{usuario.nombre}</span></span>
