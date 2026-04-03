@@ -5,7 +5,7 @@ const pool = createPool({
     user: 'root',
     password: 'XKtneuXwGpArPrcJVjGqJOVJNVJYAmeh',
     port: 10311,
-    database: 'railway'
+    database: 'crystal_cove'
 });
 
 (async () => {
