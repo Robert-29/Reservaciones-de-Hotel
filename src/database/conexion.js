@@ -1,11 +1,11 @@
 import { createPool } from "mysql2/promise";
 
 const pool = createPool({
-    host: 'localhost',
+    host: 'junction.proxy.rlwy.net',
     user: 'root',
-    password: 'Robert.29.2005',
-    port: 3306,
-    database: 'crystal_cove'
+    password: 'XKtneuXwGpArPrcJVjGqJOVJNVJYAmeh',
+    port: 10311,
+    database: 'railway'
 });
 
 (async () => {
