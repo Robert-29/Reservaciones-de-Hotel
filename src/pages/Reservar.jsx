@@ -152,7 +152,7 @@ const Reservar = () => {
         precio_total: precioTotal
       };
 
-      const response = await fetch("http://localhost:3000/reservaciones", {
+      const response = await fetch("https://reservaciones-de-hotel-production.up.railway.app/reservaciones", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
