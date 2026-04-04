@@ -38,7 +38,7 @@ const Reservar = () => {
 
   useEffect(() => {
     //extrae la habitacion mediante ID
-    fetch(`http://localhost:3000/habitaciones/${id}`)
+    fetch(`https://reservaciones-de-hotel-production.up.railway.app/habitaciones/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
@@ -48,7 +48,7 @@ const Reservar = () => {
       .then((data) => {
         if (data.estado === "reservada") {
           // Si la habitación está ocupada, buscar la siguiente disponible en la siguiente ruta
-          fetch(`http://localhost:3000/habitaciones/disponible/${id}`)
+          fetch(`https://reservaciones-de-hotel-production.up.railway.app/habitaciones/disponible/${id}`)
             .then((res) => res.json())
             .then((disponible) => {
               if (disponible.siguienteId) {

@@ -7,7 +7,7 @@ const Habitaciones = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/habitaciones")
+    fetch("https://reservaciones-de-hotel-production.up.railway.app/habitaciones")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener las habitaciones");

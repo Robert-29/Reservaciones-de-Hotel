@@ -19,7 +19,7 @@ const MisReservaciones = () => {
         setUsuario(usuarioActual);
 
         // Cargar reservaciones del usuario
-        fetch(`http://localhost:3000/reservaciones?usuario_id=${usuarioActual.id}`)
+        fetch(`https://reservaciones-de-hotel-production.up.railway.app/reservaciones?usuario_id=${usuarioActual.id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error al cargar las reservaciones');
