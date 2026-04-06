@@ -9,10 +9,45 @@ const Menu = () => {
   useEffect(() => {
     // Verificar si hay usuario autenticado al cargar el componente
     const usuarioActual = obtenerUsuario();
-    setUsuario(usuarioActual);
-  }, []);
+    if (usuarioActual) {
+      setUsuario(usuarioActual);
+      // Validar la sesión con el backend
+      fetch("https://reservaciones-de-hotel-production.up.railway.app/verify-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: usuarioActual.id,
+          session_token: usuarioActual.session_token
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.valid) {
+          // Sesión inválida, cerrar sesión local
+          cerrarSesionAuth();
+          setUsuario(null);
+          navigate("/");
+        }
+      })
+      .catch(err => {
+        console.error("Error verificando la sesión:", err);
+      });
+    }
+  }, [navigate]);
 
-  const cerrarSesion = () => {
+  const cerrarSesion = async () => {
+    if (usuario) {
+      try {
+        await fetch("https://reservaciones-de-hotel-production.up.railway.app/logout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: usuario.id })
+        });
+      } catch (err) {
+        console.error("Error al cerrar sesión remotamente:", err);
+      }
+    }
+
     cerrarSesionAuth();
     setUsuario(null);
     navigate("/");
@@ -26,7 +61,7 @@ const Menu = () => {
         </span>
         <ul className="flex space-x-10 font-inter text-sm tracking-wider items-center">
           <li className="hover:border-b-2 border-black " ><a href="./">INICIO</a></li>
-          <li className="hover:border-b-2 border-black " ><a href="./mashabitaciones">HABITACIONESsssssss</a></li>
+          <li className="hover:border-b-2 border-black " ><a href="./mashabitaciones">HABITACIONES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="./actividades">ACTIVIDADES</a></li>
           <li className="hover:border-b-2 border-black " ><a href="./misreservaciones">MIS RESERVACIONES</a></li>
           {usuario ? (

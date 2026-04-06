@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import pool from "./conexion.js";
+import crypto from "crypto";
 
 const app = express();
 app.use(cors());
@@ -285,16 +286,75 @@ app.post("/login", async (req, res) => {
             return res.status(401).json({ error: "Credenciales incorrectas" });
         }
 
-        // Retornar datos del usuario (sin la contraseña)
+        // Generar nuevo token de sesión global
+        const sessionToken = crypto.randomUUID();
+
+        // Actualizar el token y fecha de login en la base de datos
+        await pool.query(
+            "UPDATE usuarios SET session_token = ?, ultimo_login = NOW() WHERE id = ?",
+            [sessionToken, usuario.id]
+        );
+
+        // Retornar datos del usuario junto con su nuevo token (sin la contraseña)
         res.status(200).json({
             id: usuario.id,
             nombre: usuario.nombre,
             email: usuario.email,
-            rol: usuario.rol
+            rol: usuario.rol,
+            session_token: sessionToken
         });
     } catch (err) {
         console.error("Error al iniciar sesión:", err);
         res.status(500).json({ error: "Error al iniciar sesión" });
+    }
+});
+
+// Ruta para cerrar sesión
+app.post("/logout", async (req, res) => {
+    const { id } = req.body;
+
+    if (!id) {
+        return res.status(400).json({ error: "ID de usuario requerido" });
+    }
+
+    try {
+        // Para invalidar sesión en todos lados, removemos el session_token de la BD
+        await pool.query(
+            "UPDATE usuarios SET session_token = NULL, ultimo_logout = NOW() WHERE id = ?",
+            [id]
+        );
+        res.status(200).json({ message: "Sesión cerrada correctamente" });
+    } catch (err) {
+        console.error("Error al cerrar sesión:", err);
+        res.status(500).json({ error: "Error al cerrar sesión" });
+    }
+});
+
+// Ruta para verificar que el token de sesión siga intacto
+app.post("/verify-session", async (req, res) => {
+    const { id, session_token } = req.body;
+
+    if (!id || !session_token) {
+        return res.status(400).json({ error: "Falta id o sesión para verificar" });
+    }
+
+    try {
+        const [usuarios] = await pool.query("SELECT session_token FROM usuarios WHERE id = ?", [id]);
+
+        if (usuarios.length === 0) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+
+        const dbToken = usuarios[0].session_token;
+
+        if (dbToken !== session_token) {
+            return res.status(401).json({ error: "Sesión expirada o iniciada en otro dispositivo" });
+        }
+
+        res.status(200).json({ valid: true });
+    } catch (err) {
+        console.error("Error validando sesión:", err);
+        res.status(500).json({ error: "Error de servidor al validar sesión" });
     }
 });
 
@@ -324,5 +384,5 @@ app.post("/nuevahabitacion", async (req, res) => {
 
 
 app.listen(3000, () => {
-    console.log("Servidor escuchando en http://localhost:3000");
+    console.log("Servidor escuchando en", process.env.PORT);
 });
