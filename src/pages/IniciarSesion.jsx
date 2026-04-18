@@ -51,7 +51,7 @@ const IniciarSesion = () => {
                 <p className="font-inter text-gray-600" >¿No tienes una cuenta?</p>
                 <a href="/registrarme" className="font-inter text-green-700" >Regístrate</a>
             </div>
-            <form onSubmit={iniciarSesion} className="flex flex-col space-y-3 w-[30%] " >
+            <form onSubmit={iniciarSesion} className="flex flex-col space-y-3 w-[80%] sm:w-[50%] md:w-[30%] " >
                 <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

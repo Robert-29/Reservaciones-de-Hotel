@@ -58,7 +58,7 @@ const Registrarme = () => {
         <p className="font-inter text-gray-600" >¿Ya tienes una cuenta?</p>
         <a href="/iniciarsesion" className="font-inter text-green-700" >Iniciar sesión</a>
       </div>
-      <form onSubmit={registrarCliente} className="flex flex-col space-y-3 w-[30%] " action="">
+      <form onSubmit={registrarCliente} className="flex flex-col space-y-3 w-[80%] sm:w-[50%] md:w-[30%] " action="">
         <input
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}

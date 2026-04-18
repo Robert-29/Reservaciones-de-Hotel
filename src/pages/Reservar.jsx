@@ -179,13 +179,13 @@ const Reservar = () => {
   return (
     <>
       <Menu />
-      <div className="px-20 pb-0 flex flex-col space-y-5 mt-32 mb-10 " >
-        <h1 className="font-cormorant fotn-light text-4xl tracking-wider text-gray-800" >{datos.nombre}</h1>
+      <div className="px-6 md:px-20 pb-0 flex flex-col space-y-5 mt-28 md:mt-32 mb-8 md:mb-10 text-center md:text-left" >
+        <h1 className="font-cormorant font-light text-3xl md:text-4xl tracking-wider text-gray-800" >{datos.nombre}</h1>
         <p>{datos.numero_habitacion}</p>
         <p>{datos.estado}</p>
       </div>
-      <section className="flex px-16 space-x-10 mb-10" >
-        <div className="w-[45%] ">
+      <section className="flex flex-col md:flex-row px-4 md:px-16 space-y-10 md:space-y-0 md:space-x-10 mb-10" >
+        <div className="w-full md:w-[45%] ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-1 md:col-span-2">
               <img src="/img/habitacion1.avif" alt="Habitación principal" className="w-full rounded-xl shadow-lg"
@@ -232,35 +232,39 @@ const Reservar = () => {
           </div>
         </div>
 
-        <div className="w-[55%] p-10 shadow-lg rounded-xl space-y-5 " >
-          <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl' >Reservar {datos.nombre} </h2>
+        <div className="w-full md:w-[55%] p-6 md:p-10 shadow-lg rounded-xl space-y-5 " >
+          <h2 className='font-cormorant font-light text-gray-800 tracking-wider text-2xl text-center md:text-left' >Reservar {datos.nombre} </h2>
           <div className=' bg-gray-50 rounded-xl p-5 flex flex-col justify-center items-center' >
             <span className='font-inter text-xl ' >{datos.precio}/por noche</span>
           </div>
 
           {/* Calendario Check-in */}
-          <div className='flex space-x-3 w-full' >
-            <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-[50%]">
-              <h3 className="text-lg font-medium mb-4">Check-in</h3>
-              <DayPicker
-                mode="single"
-                selected={checkIn}
-                onSelect={setCheckIn}
-                disabled={checkOut ? { after: checkOut } : undefined}
-                className="text-gray-800"
-              />
+          <div className='flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-3 w-full' >
+            <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-full xl:w-[50%] flex flex-col items-center">
+              <h3 className="text-lg font-medium mb-4 w-full text-center xl:text-left">Check-in</h3>
+              <div className="w-full overflow-x-auto flex justify-center">
+                <DayPicker
+                  mode="single"
+                  selected={checkIn}
+                  onSelect={setCheckIn}
+                  disabled={checkOut ? { after: checkOut } : undefined}
+                  className="text-gray-800 scale-90 sm:scale-100"
+                />
+              </div>
             </div>
 
             {/* Calendario Check-out */}
-            <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-[50%] ">
-              <h3 className="text-lg font-medium mb-4">Check-out</h3>
-              <DayPicker
-                mode="single"
-                selected={checkOut}
-                onSelect={setCheckOut}
-                disabled={checkIn ? { before: checkIn } : undefined}
-                className="text-gray-800"
-              />
+            <div className="bg-white border-gray-100 border-2 p-2 rounded-lg w-full xl:w-[50%] flex flex-col items-center">
+              <h3 className="text-lg font-medium mb-4 w-full text-center xl:text-left">Check-out</h3>
+              <div className="w-full overflow-x-auto flex justify-center">
+                <DayPicker
+                  mode="single"
+                  selected={checkOut}
+                  onSelect={setCheckOut}
+                  disabled={checkIn ? { before: checkIn } : undefined}
+                  className="text-gray-800 scale-90 sm:scale-100"
+                />
+              </div>
             </div>
           </div>
           <h3 className='font-inter font-semibold' >Servicios Adicionales</h3>

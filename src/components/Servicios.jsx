@@ -1,11 +1,11 @@
 const servicios = () => { 
     return(
-        <section className="bg-gray-50 w-full p-20 mt-20" >
-            <h1 className="text-4xl text-center font-cormorant font-light tracking-wider" >Servicios y Amenidades</h1>
-            <div className="w-full flex justify-center space-x-10 mt-10" >
+        <section className="bg-gray-50 w-full p-8 md:p-20 mt-10 md:mt-20">
+            <h1 className="text-3xl md:text-4xl text-center font-cormorant font-light tracking-wider">Servicios y Amenidades</h1>
+            <div className="w-full flex justify-center flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10 mt-10 items-center">
                 <div data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
                      data-aos-delay="100" //retardo de 1 milisegundo
-                    className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
+                    className="w-full sm:w-[80%] md:w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500" >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/svg/wifi.svg" alt="wi-fi" />
                     </div>
@@ -15,7 +15,7 @@ const servicios = () => {
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
                     data-aos-delay="150" //retardo de 2 milisegundos
-                className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
+                className="w-full sm:w-[80%] md:w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500" >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/svg/tasa.svg" alt="" />
                     </div>
@@ -25,7 +25,7 @@ const servicios = () => {
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
                     data-aos-delay="200" //retardo de 3 milisegundos
-                className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
+                className="w-full sm:w-[80%] md:w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500" >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/svg/mancuerna.svg" alt="" />
                     </div>
@@ -35,7 +35,7 @@ const servicios = () => {
                 <div
                     data-aos="fade-up" //inicia la animación, entra de abajo hacia arriba
                     data-aos-delay="250" //retardo de 4 milisegundos
-                className="w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500 " >
+                className="w-full sm:w-[80%] md:w-[30%] p-8 bg-white rounded-xl flex flex-col justify-center items-center space-y-3 hover:shadow-md transition duration-500" >
                     <div className="bg-gray-50 rounded-full p-4" >
                         <img src="/svg/cubiertos.svg" alt="" />
                     </div>

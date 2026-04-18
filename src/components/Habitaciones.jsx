@@ -34,8 +34,8 @@ const Habitaciones = () => {
   };
 
   return (
-    <div className="pt-20 px-8">
-      <h1 className="font-cormorant text-4xl text-center tracking-wider text-gray-800 mb-8">
+    <div className="pt-20 px-4 md:px-8">
+      <h1 className="font-cormorant text-3xl md:text-4xl text-center tracking-wider text-gray-800 mb-8">
         Nuestras Habitaciones
       </h1>
       {error && <p className="text-red-500 text-center">{error}</p>}
@@ -45,7 +45,7 @@ const Habitaciones = () => {
 
           <div
             key={index}
-            className="w-[28%] bg-white shadow-lg rounded-lg overflow-hidden hover:-translate-y-1 transform transition duration-500"
+            className="w-full sm:w-[80%] md:w-[45%] lg:w-[28%] bg-white shadow-lg rounded-lg overflow-hidden hover:-translate-y-1 transform transition duration-500"
           >
             <img
               className="w-full h-64 object-cover"
@@ -60,10 +60,10 @@ const Habitaciones = () => {
                 {habitacion.descripcion}
               </p>
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-inter font-light text-gray-800">
+                <span className="text-lg md:text-2xl font-inter font-light text-gray-800">
                   ${habitacion.precio}/noche
                 </span>
-                <a href="" className="text-teal-500 font-semibold text-xl hover:underline">
+                <a href="" className="text-teal-500 font-semibold text-lg md:text-xl hover:underline">
                   <button onClick={() => { handleSeleccionarHabitacion(habitacion.id) }} className="focus:outline-none">Ver Detalles</button>
                 </a>
               </div>
@@ -74,7 +74,7 @@ const Habitaciones = () => {
 
       <div className="flex justify-center mt-10">
         <a href="/mashabitaciones"
-          className="text-3xl font-cormorant text-gray-800 hover:border-b-gray-600 hover:border-b-2 cursor-pointer"
+          className="text-2xl md:text-3xl font-cormorant text-gray-800 hover:border-b-gray-600 hover:border-b-2 cursor-pointer"
         >
           Ver más habitaciones →
         </a>

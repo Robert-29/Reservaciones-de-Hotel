@@ -82,11 +82,11 @@ const MisReservaciones = () => {
     return (
         <>
             <Menu />
-            <h1 className='font-cormorant font-light text-gray-700 text-4xl tracking-wider mt-32 px-20'>Mis reservaciones</h1>
+            <h1 className='font-cormorant font-light text-gray-700 text-3xl md:text-4xl tracking-wider mt-28 md:mt-32 px-6 md:px-20 text-center md:text-left'>Mis reservaciones</h1>
 
             {reservaciones.length === 0 ? (
-                <div className='px-20 py-10'>
-                    <p className='text-xl font-inter text-gray-600 text-center'>No tienes reservaciones aún.</p>
+                <div className='px-6 md:px-20 py-10'>
+                    <p className='text-lg md:text-xl font-inter text-gray-600 text-center'>No tienes reservaciones aún.</p>
                     <div className='flex justify-center mt-6'>
                         <a href='/mashabitaciones' className='bg-gray-900 text-white px-6 py-3 rounded-md font-inter hover:bg-gray-700 transition'>
                             Explorar Habitaciones
@@ -94,7 +94,7 @@ const MisReservaciones = () => {
                     </div>
                 </div>
             ) : (
-                <div className='px-20 py-10 grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='px-6 md:px-20 py-10 grid grid-cols-1 lg:grid-cols-2 gap-6'>
                     {reservaciones.map((reserva) => {
                         const servicios = typeof reserva.servicios_adicionales === 'string'
                             ? JSON.parse(reserva.servicios_adicionales)

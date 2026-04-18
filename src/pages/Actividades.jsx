@@ -10,65 +10,65 @@ const Actividades = () => {
           Actividades y Experiencias
         </h1>
         <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center justify-center gap-6">
-          <div className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/img/actividad1.avif" alt="Suite Ejecutiva" />
-            <div className="p-14 flex flex-col space-y-5 justify-center ">
+          <div className="w-full md:w-[90%] flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden mb-5">
+            <img className="w-full md:w-[45%] h-64 md:h-auto object-cover" src="/img/actividad1.avif" alt="Suite Ejecutiva" />
+            <div className="p-8 md:p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
                   <img className="h-8" src="/svg/luna.svg" alt="" />
                 </article>
-                <h3 className="font-cormorant text-2xl tracking-wider " >Cenas Privadas a la Luz de la Luna</h3>
+                <h3 className="font-cormorant text-xl md:text-2xl tracking-wider " >Cenas Privadas a la Luz de la Luna</h3>
               </div>
-              <p className="font-inter text-gray-600 px-10 text-md" >Disfruta de una experiencia gastronómica única bajo el cielo estrellado, con un servicio personalizado y un menú exclusivo.</p>
+              <p className="font-inter text-gray-600 md:px-10 text-md" >Disfruta de una experiencia gastronómica única bajo el cielo estrellado, con un servicio personalizado y un menú exclusivo.</p>
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-delay="100" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/img/actividad2.avif" alt="Suite Ejecutiva" />
-            <div className="p-14 flex flex-col space-y-5 justify-center ">
+          <div data-aos="fade-up" data-aos-delay="100" className="w-full md:w-[90%] flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden mb-5">
+            <img className="w-full md:w-[45%] h-64 md:h-auto object-cover" src="/img/actividad2.avif" alt="Suite Ejecutiva" />
+            <div className="p-8 md:p-14 flex flex-col space-y-5 justify-center ">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
                   <img className="h-8" src="/svg/acuatico.svg" alt="" />
                 </article>
-                <h3 className="font-cormorant text-2xl tracking-wider " >Buseo</h3>
+                <h3 className="font-cormorant text-xl md:text-2xl tracking-wider " >Buseo</h3>
               </div>
-              <p className="font-inter text-gray-600 px-10 text-md" >Vive la emoción de deslizarte sobre las aguas mientras disfrutas de vistas panorámicas incomparables.</p>
+              <p className="font-inter text-gray-600 md:px-10 text-md" >Vive la emoción de deslizarte sobre las aguas mientras disfrutas de vistas panorámicas incomparables.</p>
             </div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="100" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/img/actividad3.avif" alt="Suite Ejecutiva" />
-            <div className="p-14 flex flex-col space-y-5 justify-center">
+          <div data-aos="fade-up" data-aos-delay="100" className="w-full md:w-[90%] flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden mb-5">
+            <img className="w-full md:w-[45%] h-64 md:h-auto object-cover" src="/img/actividad3.avif" alt="Suite Ejecutiva" />
+            <div className="p-8 md:p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
                   <img className="h-8" src="/svg/mancuerna.svg" alt="" />
                 </article>
-                <h3 className="font-cormorant text-2xl tracking-wider " >Gimnasio</h3>
+                <h3 className="font-cormorant text-xl md:text-2xl tracking-wider " >Gimnasio</h3>
               </div>
-              <p className="font-inter text-gray-600 px-10 text-md" >Mantén tu rutina de ejercicios en nuestro gimnasio completamente equipado, abierto las 24 horas.</p>
+              <p className="font-inter text-gray-600 md:px-10 text-md" >Mantén tu rutina de ejercicios en nuestro gimnasio completamente equipado, abierto las 24 horas.</p>
             </div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="300" className="w-[90%] flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/img/actividad4.avif" alt="Suite Ejecutiva" />
-            <div className="p-14 flex flex-col space-y-5 justify-center">
+          <div data-aos="fade-up" data-aos-delay="300" className="w-full md:w-[90%] flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden mb-5">
+            <img className="w-full md:w-[45%] h-64 md:h-auto object-cover" src="/img/actividad4.avif" alt="Suite Ejecutiva" />
+            <div className="p-8 md:p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
                   <img className="h-8" src="/svg/spa.svg" alt="" />
                 </article>
-                <h3 className="font-cormorant text-2xl tracking-wider " >Spa y Bienestar</h3>
+                <h3 className="font-cormorant text-xl md:text-2xl tracking-wider " >Spa y Bienestar</h3>
               </div>
-              <p className="font-inter text-gray-600 px-10 text-md" >Relájate y rejuvenece en nuestro spa de clase mundial con tratamientos exclusivos y terapias holísticas.</p>
+              <p className="font-inter text-gray-600 md:px-10 text-md" >Relájate y rejuvenece en nuestro spa de clase mundial con tratamientos exclusivos y terapias holísticas.</p>
             </div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="300" className="w-[90%]  flex bg-gray-50 rounded-lg overflow-hidden mb-5">
-            <img className="w-[45%] object-cover" src="/img/actividad6.jpeg" alt="Suite Ejecutiva" />
-            <div className="p-14 flex flex-col space-y-5 justify-center">
+          <div data-aos="fade-up" data-aos-delay="300" className="w-full md:w-[90%] flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden mb-5">
+            <img className="w-full md:w-[45%] h-64 md:h-auto object-cover" src="/img/actividad6.jpeg" alt="Suite Ejecutiva" />
+            <div className="p-8 md:p-14 flex flex-col space-y-5 justify-center">
               <div className="flex space-x-3 items-center" >
                 <article className="bg-white rounded-full p-4" >
                   <img className="h-8" src="/svg/cubiertos.svg" alt="" />
                 </article>
-                <h3 className="font-cormorant text-2xl tracking-wider " >Buffet</h3>
+                <h3 className="font-cormorant text-xl md:text-2xl tracking-wider " >Buffet</h3>
               </div>
-              <p className="font-inter text-gray-600 px-10 text-md" >Explora una amplia variedad de delicias culinarias en nuestro buffet internacional, preparado por chefs expertos.</p>
+              <p className="font-inter text-gray-600 md:px-10 text-md" >Explora una amplia variedad de delicias culinarias en nuestro buffet internacional, preparado por chefs expertos.</p>
             </div>
           </div>
         </div>

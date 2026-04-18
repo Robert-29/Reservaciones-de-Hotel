@@ -6,9 +6,9 @@ import "swiper/css/pagination";
 
 const Galeria = () => {
   return (
-    <section className="flex justify-center items-center p-20 flex-col space-y-20">
-      <h2 className="font-cormorant font-light tracking-wider text-gray-700 text-4xl">Galería</h2>
-      <div className="w-[80%] h-[550px] rounded-2xl shadow-lg overflow-hidden relative">
+    <section className="flex justify-center items-center p-8 md:p-20 flex-col space-y-10 md:space-y-20">
+      <h2 className="font-cormorant font-light tracking-wider text-gray-700 text-3xl md:text-4xl text-center">Galería</h2>
+      <div className="w-full md:w-[80%] h-[300px] md:h-[550px] rounded-2xl shadow-lg overflow-hidden relative">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0} // Espacio entre slides

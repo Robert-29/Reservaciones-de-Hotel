@@ -35,10 +35,10 @@ const Home = () => {
       <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('/img/fondo-hotel.avif')` }}>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
-          <h1 className="text-7xl font-cormorant tracking-wider">
+          <h1 className="text-5xl md:text-7xl font-cormorant tracking-wider">
             EN <br /> CRYSTAL COVE <br /> ENCUENTRA
           </h1>
-          <span className="text-7xl font-cormorant font-light text-white uppercase mt-4 ">
+          <span className="text-5xl md:text-7xl font-cormorant font-light text-white uppercase mt-4 ">
             {frases[indiceActual]}
           </span>
         </div>
